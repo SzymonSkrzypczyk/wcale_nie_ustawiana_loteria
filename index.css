@@ -57,3 +57,7 @@ body {
   button:hover {
     background-color: #555;
   }
+
+  .disabled{
+    background-color: #c3c3c3;
+  }

@@ -19,6 +19,8 @@ const images = [
     "images/AGH.png"
   ];
 
+  const startButton = document.getElementById("start-button");
+
   function setup() {
     // set random images at the page load
     document.getElementById("slot1-img").src = images[Math.floor(Math.random() * images.length)];
@@ -27,6 +29,12 @@ const images = [
   }
   
   function spin() {
+    // disable the button to prevent spamming
+    startButton.disabled = true;
+    startButton.classList.add("disabled");
+    
+    const audio = new Audio("hit.mp3");
+    audio.play();
     const slot1 = document.getElementById("slot1-img");
     const slot2 = document.getElementById("slot2-img");
     const slot3 = document.getElementById("slot3-img");
@@ -72,4 +80,7 @@ const images = [
   function playWinSound() {
     const audio = new Audio("winning_sound.mp3");
     audio.play();
+    // re-enable the button
+    startButton.disabled = false;
+    startButton.classList.remove("disabled");
   }
