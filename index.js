@@ -18,6 +18,13 @@ const images = [
     "images/AGH.png",
     "images/AGH.png"
   ];
+
+  function setup() {
+    // set random images at the page load
+    document.getElementById("slot1-img").src = images[Math.floor(Math.random() * images.length)];
+    document.getElementById("slot2-img").src = images[Math.floor(Math.random() * images.length)];
+    document.getElementById("slot3-img").src = images[Math.floor(Math.random() * images.length)];
+  }
   
   function spin() {
     const slot1 = document.getElementById("slot1-img");
