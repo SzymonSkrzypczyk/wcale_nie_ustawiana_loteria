@@ -20,6 +20,7 @@ const images = [
   ];
 
   const startButton = document.getElementById("start-button");
+  let spinCount = 0;
 
   function setup() {
     // set random images at the page load
@@ -29,6 +30,11 @@ const images = [
   }
   
   function spin() {
+    spinCount++;
+    // a small easter egg for the resilient ;)
+    if(spinCount == 5){
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
     // disable the button to prevent spamming
     startButton.disabled = true;
     startButton.classList.add("disabled");
